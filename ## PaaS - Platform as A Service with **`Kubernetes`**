@@ -4,7 +4,7 @@
 
 ---
 
-## **Author:** *Julian (Phong) Ng.* 
+## **Author:** *Doan Van Phuc* 
 
 **Date of issue**: *May 25th 2021*
 
@@ -677,47 +677,3 @@ $ kubectl exec --stdin --tty <Pod-name> -- /bin/bash
 $ kubectl logs <pod-name>
 ```
 
-## 1. `Deployment in version "v1" cannot be handled as a Deployment...`
-
-:x: Bug detected:
- 
-@tovin07 tovin07 on May 31 Collaborator
-Đây không phải bug, mà chỉ là 1 gotcha về cách hoạt động của yaml mà thôi.
-
-Nếu em còn nhớ phần thực hành ansible thì trong docs có ghi chú đại khái là: với các giá trị boolean nhưng ở dạng text (yes/no, true/false, ...) mà muốn giữ nguyên dạng text thì phải đặt trong ngoặc, nếu không nó sẽ bị auto convert thành kiểu boolean luôn.
-
- 
-@meobilivang meobilivang on May 31 Author Contributor
-Dạ! Em sẽ edit lại đoạn này thêm vào commit lại. Thank you for your feedback ạ!
-
- 
-@meobilivang meobilivang on May 31 Author Contributor
-Em đã hoàn thiện edit lại đoạn này ạ. Anh @tovin07 review qua giúp em nhé! Em cám ơn anh.
-
-@phuc-doan	Reply…
-
-```bash
- env:
-        - name: ALLOW_EMPTY_PASSWORD
-          value: yes
-```
-
-:heavy_check_mark: Adding quotation marks: 
-
-```bash
- env:
-        - name: ALLOW_EMPTY_PASSWORD
-          value: "yes"
-```
-
-# **VI. :newspaper: REFERENCES**
-
-- [**Official Documentation** `Kubernetes`](https://kubernetes.io/docs/)
-
-- [**kubectl** `apply` or `create`](https://www.digitalocean.com/community/tutorials/imperative-vs-declarative-kubernetes-management-a-digitalocean-comic)
-
-- [**Using Secrets in `K8S`**](https://kubernetes.io/docs/concepts/configuration/secret/#secret-types)
-
-- [**Official Docs Example**](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/)
-
-- [**Install Minikube on Ubuntu 20.04**](https://phoenixnap.com/kb/install-minikube-on-ubuntu)
