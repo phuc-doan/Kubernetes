@@ -9,7 +9,7 @@
 >   
 >   * **MariaDB**
 >   * **WordPress**
-> * [x]  Documentation: **Path**: `Week-4/Julian-P-Nguyen/`
+> * [x]  Documentation: **Path**: `Week-4/Doan Van Phuc/`
 >   
 >   * [x]  Describe Cluster's Architecture & individual components.
 >   * [x]  Step-by-step installation
